@@ -12,7 +12,7 @@ export default function Gallery() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q");
 
-  const paintingWithDetails = mapPaintingsWithDetails(
+  const paintingsWithDetails = mapPaintingsWithDetails(
     paintings,
     authors,
     locations,
@@ -24,7 +24,7 @@ export default function Gallery() {
   return (
     <div className={styles.gallery}>
       <div className={styles.galleryList}>
-        {paintingWithDetails?.map((painting) => (
+        {paintingsWithDetails?.map((painting) => (
           <div className={styles.paintingWrapper} key={painting.id}>
             <Painting painting={painting} />
           </div>

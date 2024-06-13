@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PaintingProps } from "../../utils/types";
 import styles from "./Painting.module.scss";
+import { BASE_URL } from "../../utils/constants";
 
 export default function Painting({ painting }: PaintingProps) {
   const { created, name, imageUrl, locationName, authorName } = painting;
@@ -14,10 +15,10 @@ export default function Painting({ painting }: PaintingProps) {
     <div className={styles.painting}>
       {!imageLoaded && <div className={styles.placeholder}>Loading...</div>}
       <img
-        src={`https://test-front.framework.team/${imageUrl}`}
+        src={`${BASE_URL}${imageUrl}`}
         alt={name}
-        className={`${!imageLoaded && styles.blur}`}
         onLoad={handleImageLoad}
+        loading="lazy"
       />
       <div className={styles.info}>
         <div className={styles.visible}>

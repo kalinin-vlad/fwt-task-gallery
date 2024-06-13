@@ -15,14 +15,12 @@ const queryClient = new QueryClient({
   },
 });
 
-// basename={import.meta.env.BASE_URL}
-
 function App() {
   return (
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route element={<AppLayout />}>
               <Route index element={<Navigate to="gallery" />} />

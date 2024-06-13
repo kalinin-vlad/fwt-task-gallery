@@ -42,7 +42,7 @@ export async function getAuthors(): Promise<Author[]> {
     );
     return response.data;
   } catch (error) {
-    console.log("Error fetching authors:", error);
+    console.error("Error fetching authors:", error);
     throw error;
   }
 }
@@ -54,7 +54,7 @@ export async function getLocations(): Promise<Location[]> {
     );
     return response.data;
   } catch (error) {
-    console.log("Error fetching locations:", error);
+    console.error("Error fetching locations:", error);
     throw error;
   }
 }
