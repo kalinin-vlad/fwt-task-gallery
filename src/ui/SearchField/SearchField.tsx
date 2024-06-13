@@ -1,13 +1,13 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useDarkMode } from "../../context/DarkModeContext";
 import styles from "./SearchField.module.scss";
 import ButtonIcon from "../../ui/ButtonIcon/ButtonIcon";
+import SearchIcon from "./icons/SearchIcon";
+import ResetIcon from "./icons/ResetIcon";
 
 export default function SearchField() {
   const [query, setQuery] = useState<string>("");
   const [searchParams, setSearchParams] = useSearchParams();
-  const { isDarkMode } = useDarkMode();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -42,31 +42,13 @@ export default function SearchField() {
       <ButtonIcon
         type="submit"
         className={styles.searchButton}
-        icon={
-          <img
-            src={
-              isDarkMode
-                ? "/searchDarkMode-icon.svg"
-                : "searchLightMode-icon.svg"
-            }
-            alt="search"
-          />
-        }
+        icon={<SearchIcon />}
       />
       {query && (
         <ButtonIcon
           type="reset"
           className={styles.resetButton}
-          icon={
-            <img
-              src={
-                isDarkMode
-                  ? "resetDarkMode-icon.svg"
-                  : "resetLightMode-icon.svg"
-              }
-              alt="reset"
-            />
-          }
+          icon={<ResetIcon />}
           onClick={handleReset}
         />
       )}

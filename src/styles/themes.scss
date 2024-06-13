@@ -36,6 +36,8 @@
 
     --button-background: var(--primary-dark-gray);
     --button-color-hover: var(--primary-white);
+
+    --searchIcon-color: var(--primary-dark-gray);
   }
 
   &.dark-mode {
@@ -72,5 +74,7 @@
 
     --button-background: var(--primary-light-gray);
     --button-color-hover: var(--primary-black);
+
+    --searchIcon-color: var(--primary-light-gray);
   }
 }
