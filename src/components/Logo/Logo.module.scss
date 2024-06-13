@@ -1,0 +1,12 @@
+.logo {
+  text-align: center;
+  height: 1.6rem;
+  width: 7.3rem;
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    height: 2rem;
+    width: 9.1rem;
+  }
+}

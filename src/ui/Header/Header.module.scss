@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+  background-color: var(--header-background);
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    padding: 2.4rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 2rem 0;
+  }
+}

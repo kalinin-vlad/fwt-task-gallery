@@ -1,0 +1,76 @@
+@forward "variables/colors";
+@forward "variables/fonts";
+@forward "variables/sizes";
+
+:root {
+  &.light-mode {
+    --color-text: var(--primary-dark-gray);
+    --color-background: var(--primary-white);
+    --header-background: var(--primary-white);
+
+    --darkModeToggle-background: var(--secondary-white);
+    --darkModeToggle-background-hover: #f3f3f3;
+
+    --searchField-background: var(--primary-white);
+    --searchField-border-color: var(--primary-light-gray);
+    --searchField-placeholder-color: var(--secondary-gray);
+    --searchField-color: var(--primary-dark-gray);
+
+    --color-font-base: var(--primary-black);
+    --color-background-ui: var(--secondary-white);
+
+    --paintingInfo-background: var(--primary-white);
+    --paintingInfo-heading-color: var(--primary-black);
+    --paintingInfo-paragraph-color: var(--accent-red);
+
+    --pagination-color: var(--primary-dark-gray);
+    --pagination-active-background: rgba(var(--primary-black), 0.05);
+    --pagination-arrows-color: var(--primary-dark-gray);
+    --pagination-hover-border-color: var(--secondary-gray);
+
+    --empty-color-noMatches: var(--primary-dark-gray);
+    --empty-color-suggestion: var(--secondary-gray);
+
+    --pageNotFound-background: #f9fafb;
+    --pageNotFound-background-box: var(--primary-white);
+
+    --button-background: var(--primary-dark-gray);
+    --button-color-hover: var(--primary-white);
+  }
+
+  &.dark-mode {
+    --color-text: var(--primary-light-gray);
+    --color-background: var(--primary-black);
+    --header-background: var(--primary-black);
+
+    --darkModeToggle-background: var(--secondary-black);
+    --darkModeToggle-background-hover: #1b1b1b;
+
+    --searchField-background: var(--secondary-black);
+    --searchField-border-color: var(--secondary-black);
+    --searchField-placeholder-color: var(--primary-dark-gray);
+    --searchField-color: var(--primary-light-gray);
+
+    --color-font-base: var(--primary-light-gray);
+    --color-background-ui: var(--secondary-black);
+
+    --paintingInfo-background: var(--primary-black);
+    --paintingInfo-heading-color: var(--primary-white);
+    --paintingInfo-paragraph-color: var(--accent-gold);
+
+    --pagination-color: var(--primary-light-gray);
+    --pagination-active-background: rgba(var(--primary-black), 0.05);
+    --pagination-arrows-hover: var(--secondary-black);
+    --pagination-arrows-color: var(--primary-light-gray);
+    --pagination-hover-border-color: var(--primary-dark-gray);
+
+    --empty-color-noMatches: var(--primary-light-gray);
+    --empty-color-suggestion: var(--secondary-gray);
+
+    --pageNotFound-background: var(--color-background);
+    --pageNotFound-background-box: var(--secondary-black);
+
+    --button-background: var(--primary-light-gray);
+    --button-color-hover: var(--primary-black);
+  }
+}

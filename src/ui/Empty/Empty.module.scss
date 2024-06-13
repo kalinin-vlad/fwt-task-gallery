@@ -1,0 +1,20 @@
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  .noMatchesMessage {
+    color: var(--empty-color-noMatches);
+    font-weight: 300;
+    font-size: var(--font-size-lg);
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  .suggestionMessage {
+    color: var(--empty-color-suggestion);
+    font-weight: 300;
+    font-size: var(--font-size-base);
+  }
+}
