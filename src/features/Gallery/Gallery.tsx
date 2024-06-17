@@ -2,7 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import { useGallery } from "./useGallery";
 import { mapPaintingsWithDetails } from "../../utils/mapPaintingsWithDetails";
 import styles from "./Gallery.module.scss";
-import Painting from "../Painting/Painting";
+import Painting from "../../components/Painting/Painting";
 import Spinner from "../../components/Spinner/Spinner";
 import Pagination from "../../ui/Pagination/Pagination";
 import Empty from "../../ui/Empty/Empty";
