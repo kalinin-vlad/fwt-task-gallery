@@ -7,13 +7,7 @@ import GalleryPage from "./pages/Gallery/GalleryPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import "./styles/main.scss";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 0,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
 function App() {
   return (

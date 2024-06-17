@@ -22,18 +22,9 @@ export function useGallery(): UseGalleryResult {
   // Search query
   const query = searchParams.get("q") || undefined;
 
-  // const {
-  //   data,
-  //   isLoading,
-  //   error,
-  // }: UseQueryResult<{ data: Painting[]; totalCount: number }> = useQuery({
-  //   queryKey: ["gallery", page],
-  //   queryFn: () => getPaintings({ page, limit }),
-  // });
-
   const { data, isLoading, error }: UseQueryResult<GetCombinedDataResponse> =
     useQuery({
-      queryKey: ["galleryCombinedData", page, query],
+      queryKey: ["galleryCombinedData", { page: page, q: query }],
       queryFn: () =>
         getCombineData({
           page,

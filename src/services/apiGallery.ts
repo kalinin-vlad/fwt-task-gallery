@@ -1,4 +1,3 @@
-import axios from "axios";
 import {
   Author,
   Location,
@@ -7,21 +6,19 @@ import {
   GetPaintingsResponse,
   GetPaintingsParams,
 } from "../utils/types";
+import axiosInstance from "./axiosInstance";
 
 export async function getPaintings(
   params: GetPaintingsParams,
 ): Promise<GetPaintingsResponse> {
   try {
-    const response = await axios.get<Painting[]>(
-      "https://test-front.framework.team/paintings",
-      {
-        params: {
-          _limit: params.limit,
-          _page: params.page,
-          ...(params.q && { q: params.q }),
-        },
+    const response = await axiosInstance.get<Painting[]>("/paintings", {
+      params: {
+        _limit: params.limit,
+        _page: params.page,
+        ...(params.q && { q: params.q }),
       },
-    );
+    });
 
     const totalCount = parseInt(response.headers["x-total-count"], 10);
     if (isNaN(totalCount)) {
@@ -37,9 +34,7 @@ export async function getPaintings(
 
 export async function getAuthors(): Promise<Author[]> {
   try {
-    const response = await axios.get<Author[]>(
-      "https://test-front.framework.team/authors",
-    );
+    const response = await axiosInstance.get<Author[]>("/authors");
     return response.data;
   } catch (error) {
     console.error("Error fetching authors:", error);
@@ -49,9 +44,7 @@ export async function getAuthors(): Promise<Author[]> {
 
 export async function getLocations(): Promise<Location[]> {
   try {
-    const response = await axios.get<Location[]>(
-      "https://test-front.framework.team/locations",
-    );
+    const response = await axiosInstance.get<Location[]>("/locations");
     return response.data;
   } catch (error) {
     console.error("Error fetching locations:", error);
