@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect } from "react";
 import { useLocalStorageState } from "../hooks/useLocalStorageState";
-import { DarkModeContextType, DarkModeProviderProps } from "../utils/types";
+import { DarkModeContextType, DarkModeProviderProps } from "../types/index";
 
 const DarkModeContext = createContext<DarkModeContextType | undefined>(
   undefined,

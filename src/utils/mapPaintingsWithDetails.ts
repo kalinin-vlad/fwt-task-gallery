@@ -1,4 +1,9 @@
-import { Author, Location, Painting, PaintingWithDetails } from "./types";
+import {
+  Author,
+  Location,
+  Painting,
+  PaintingWithDetails,
+} from "../types/index";
 
 export function mapPaintingsWithDetails(
   paintings: Painting[] | undefined,

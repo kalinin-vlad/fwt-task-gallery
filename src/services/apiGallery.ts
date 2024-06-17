@@ -5,7 +5,7 @@ import {
   GetCombinedDataResponse,
   GetPaintingsResponse,
   GetPaintingsParams,
-} from "../utils/types";
+} from "../types/index";
 import axiosInstance from "./axiosInstance";
 
 export async function getPaintings(

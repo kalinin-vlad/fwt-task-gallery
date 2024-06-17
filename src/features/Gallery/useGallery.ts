@@ -1,6 +1,5 @@
 import { useSearchParams } from "react-router-dom";
 import { getCombineData } from "../../services/apiGallery";
-import { PAGE_SIZE } from "../../utils/constants";
 import {
   UseQueryResult,
   useQuery,
@@ -10,7 +9,7 @@ import {
   UseGalleryResult,
   GetCombinedDataResponse,
   GetPaintingsParams,
-} from "../../utils/types";
+} from "../../types/index";
 
 export function useGallery(): UseGalleryResult {
   const queryClient = useQueryClient();
@@ -28,13 +27,13 @@ export function useGallery(): UseGalleryResult {
       queryFn: () =>
         getCombineData({
           page,
-          limit: PAGE_SIZE,
+          limit: import.meta.env.VITE_API_PAGE_SIZE,
           q: query,
         } as GetPaintingsParams),
     });
 
   const totalPages = data
-    ? Math.ceil(data.paintings.totalCount / PAGE_SIZE)
+    ? Math.ceil(data.paintings.totalCount / import.meta.env.VITE_API_PAGE_SIZE)
     : 0;
 
   // PRE-FETCHING
@@ -42,14 +41,22 @@ export function useGallery(): UseGalleryResult {
     queryClient.prefetchQuery({
       queryKey: ["galleryCombinedData", { page: page + 1, q: query }],
       queryFn: () =>
-        getCombineData({ page: page + 1, limit: PAGE_SIZE, q: query }),
+        getCombineData({
+          page: page + 1,
+          limit: import.meta.env.VITE_API_PAGE_SIZE,
+          q: query,
+        }),
     });
 
   if (page > 1)
     queryClient.prefetchQuery({
       queryKey: ["galleryCombinedData", { page: page - 1, q: query }],
       queryFn: () =>
-        getCombineData({ page: page - 1, limit: PAGE_SIZE, q: query }),
+        getCombineData({
+          page: page - 1,
+          limit: import.meta.env.VITE_API_PAGE_SIZE,
+          q: query,
+        }),
     });
 
   return {

@@ -1,8 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { generatePages } from "./paginationUtils";
-import { PaginationProps } from "../../utils/types";
+import { PaginationProps } from "../../types/index";
 import { ArrowLeftIcon, ArrowRightIcon } from "./ArrowsIcons";
-import { PAGE_SIZE } from "../../utils/constants";
 import styles from "./Pagination.module.scss";
 import ButtonIcon from "../ButtonIcon/ButtonIcon";
 
@@ -12,7 +11,7 @@ export default function Pagination({ totalCount }: PaginationProps) {
     ? 1
     : Number(searchParams.get("page"));
 
-  const totalPages = Math.ceil(totalCount / PAGE_SIZE);
+  const totalPages = Math.ceil(totalCount / import.meta.env.VITE_API_PAGE_SIZE);
 
   function nextPage() {
     const next = currentPage === totalPages ? currentPage : currentPage + 1;

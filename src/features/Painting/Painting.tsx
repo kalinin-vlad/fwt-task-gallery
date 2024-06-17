@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { PaintingProps } from "../../utils/types";
+import { PaintingProps } from "../../types/index";
 import styles from "./Painting.module.scss";
-import { BASE_URL } from "../../utils/constants";
 
 export default function Painting({ painting }: PaintingProps) {
   const { created, name, imageUrl, locationName, authorName } = painting;
@@ -15,7 +14,7 @@ export default function Painting({ painting }: PaintingProps) {
     <div className={styles.painting}>
       {!imageLoaded && <div className={styles.placeholder}>Loading...</div>}
       <img
-        src={`${BASE_URL}${imageUrl}`}
+        src={`${import.meta.env.VITE_API_BASE_URL}${imageUrl}`}
         alt={name}
         onLoad={handleImageLoad}
         loading="lazy"
