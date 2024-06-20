@@ -1,11 +1,8 @@
 .painting {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
   position: relative;
+  overflow: hidden;
   aspect-ratio: 8 / 5;
+  width: 100%;
 
   &:hover img {
     transform: scale(1.1);
@@ -25,29 +22,6 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.2s ease;
-  }
-
-  h2 {
-    font-family: var(--font-family-heading);
-    font-size: var(--font-size-lg);
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--paintingInfo-heading-color);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.3s;
-  }
-
-  p {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-sm);
-    color: var(--paintingInfo-paragraph-color);
-    font-weight: 700;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.3s;
   }
 
   .placeholder {
@@ -72,6 +46,29 @@
     text-transform: uppercase;
     align-content: center;
     transition: background-color 0.3s;
+
+    h2 {
+      font-family: var(--font-family-heading);
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--paintingInfo-heading-color);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: color 0.3s;
+    }
+
+    p {
+      font-family: var(--font-family-base);
+      font-size: var(--font-size-sm);
+      color: var(--paintingInfo-paragraph-color);
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: color 0.3s;
+    }
 
     .invisible {
       position: absolute;
@@ -105,15 +102,6 @@
       background-color: var(--paintingInfo-paragraph-color);
       z-index: 10;
     }
-  }
-
-  .imageWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
   }
 }
 

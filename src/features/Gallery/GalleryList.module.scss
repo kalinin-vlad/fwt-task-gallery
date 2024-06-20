@@ -1,0 +1,42 @@
+.galleryList {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+
+  .paintingWrapper {
+    display: flex;
+  }
+  @media (max-width: 767px) {
+    row-gap: 2rem;
+
+    .paintingWrapper {
+      min-height: 18.5rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+
+    .paintingWrapper {
+      min-height: 22rem;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1365px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2rem;
+
+    .paintingWrapper {
+      min-height: 26rem;
+    }
+  }
+
+  @media (min-width: 1366px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2rem;
+
+    .paintingWrapper {
+      min-height: 26rem;
+    }
+  }
+}

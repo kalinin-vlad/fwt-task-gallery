@@ -1,14 +1,13 @@
 import { useSearchParams } from "react-router-dom";
 import { useGallery } from "./useGallery";
 import { mapPaintingsWithDetails } from "../../utils/mapPaintingsWithDetails";
-import styles from "./Gallery.module.scss";
+import styles from "./GalleryList.module.scss";
 import Painting from "../../components/Painting/Painting";
 import Spinner from "../../components/Spinner/Spinner";
-import Pagination from "../../ui/Pagination/Pagination";
 import Empty from "../../ui/Empty/Empty";
 
 export default function Gallery() {
-  const { paintings, authors, locations, isLoading, totalCount } = useGallery();
+  const { paintings, authors, locations, isLoading } = useGallery();
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q");
 
@@ -22,18 +21,12 @@ export default function Gallery() {
   if (!paintings?.length) return <Empty resourceName={query ?? ""} />;
 
   return (
-    <div className={styles.gallery}>
-      <div className={styles.galleryList}>
-        {paintingsWithDetails?.map((painting) => (
-          <div className={styles.paintingWrapper} key={painting.id}>
-            <Painting painting={painting} />
-          </div>
-        ))}
-      </div>
-
-      <div className={styles.paginationContainer}>
-        <Pagination totalCount={totalCount} />
-      </div>
+    <div className={styles.galleryList}>
+      {paintingsWithDetails?.map((painting) => (
+        <div className={styles.paintingWrapper} key={painting.id}>
+          <Painting painting={painting} />
+        </div>
+      ))}
     </div>
   );
 }

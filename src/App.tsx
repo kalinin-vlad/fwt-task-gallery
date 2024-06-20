@@ -3,7 +3,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { DarkModeProvider } from "./context/DarkModeContext";
 import AppLayout from "./pages/AppLayout/AppLayout";
-import GalleryPage from "./pages/Gallery/GalleryPage";
+import Gallery from "./pages/Gallery/Gallery";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import "./styles/main.scss";
 
@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route element={<AppLayout />}>
               <Route index element={<Navigate to="gallery" />} />
-              <Route path="gallery" element={<GalleryPage />} />
+              <Route path="gallery" element={<Gallery />} />
             </Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
